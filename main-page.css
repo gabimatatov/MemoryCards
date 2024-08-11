@@ -41,7 +41,7 @@ input[type="number"] {
     /* Adjust the width as needed */
 }
 
-input[type="text"]:focus {
+input[type="number"]:focus {
     border-color: #007bff;
     /* Change border color on focus */
     background-color: #ffffff;
