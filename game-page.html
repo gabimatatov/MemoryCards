@@ -4,19 +4,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Memory Cards Game</title>
     <link rel="stylesheet" type="text/css" href="game-page.css">
 </head>
 
-<body>
+<body onload="initializeGame()">
     <h1>Memory Cards Game</h1>
-    <div id="grid-container">
-        
-    </div>
-    <p>score: <span id="score"></span></p>
+    <h2 id="player-name-header">Player: </h2>
+    <div id="grid-container"></div>
+    <p>Time: <span id="timer"></span></p>
     <div class="actions">
         <button class="restart-game" onclick="restartGame()">Restart</button>
     </div>
-    <script src="main.js"></script>
+    <script src="game-page.js"></script>
 </body>
+
 </html>
