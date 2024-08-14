@@ -40,15 +40,11 @@ input[type="number"], input[type="text"] {
     outline: none;
     width: 400px;
     margin-bottom: 10px;
-    /* Space between input and button */
-    /* Adjust the width as needed */
 }
 
 input[type="number"]:focus, input[type="text"]:focus {
     border-color: #007bff;
-    /* Change border color on focus */
     background-color: #ffffff;
-    /* Change background color on focus */
 }
 
 .cards-select-button, .restart-game{
@@ -65,7 +61,6 @@ input[type="number"]:focus, input[type="text"]:focus {
 
 .cards-select-button:hover  {
     background-color: #0056b3;
-    /* Darker shade on hover */
 }
 
 .error-message {
