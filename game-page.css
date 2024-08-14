@@ -42,8 +42,8 @@ p {
     gap: 10px;
     justify-content: center;
     align-content: center;
-    place-items: center; /* Center cards inside the grid */
-    overflow: hidden; 
+    place-items: center;
+    overflow: scroll; 
     width: 80vw; 
     height: 70vh;
 }
