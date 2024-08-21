@@ -151,16 +151,18 @@ const checkEndGameInterval = setInterval(checkEndGame, 500);
 function endGame(playerScore){
 
     clearInterval(checkEndGameInterval);
-
-    // const playerScore = document.getElementById('timer').textContent;
     const gridContainer = document.getElementById('grid-container');
-    if (gridContainer)
+    if (gridContainer){
         gridContainer.remove();
-    
-    const p = document.querySelector('p')
-    if(p)
-        p.remove();
-
+    }
+    const pTimer = document.querySelector('p');
+    if(pTimer){
+        pTimer.remove();
+    }
     const congratulationsHeader = document.getElementById('player-name-header');
     congratulationsHeader.textContent = `Congratulations ${getGameParameters('playerName')}, you finished the game in ${playerScore} seconds!`;
+    congratulationsHeader.style.padding = '20px';
+
+    const playAgainButton = document.querySelector('button');
+    playAgainButton.textContent = 'Play Again';
 }
