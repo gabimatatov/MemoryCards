@@ -148,6 +148,7 @@ function checkEndGame() {
 
 const checkEndGameInterval = setInterval(checkEndGame, 500);
 
+// End the game function 
 function endGame(playerScore){
 
     clearInterval(checkEndGameInterval);
