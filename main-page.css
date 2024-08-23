@@ -6,6 +6,7 @@ body {
     min-width: 100vw;
     background-color: #12181f;
     color: white;
+    overflow: hidden;
 }
 
 h1 {
