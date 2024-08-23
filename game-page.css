@@ -39,7 +39,7 @@ h2 {
     margin: 10px;
 }
 
-#grid-container {
+#cards-container {
     display: grid;
     padding: 10px;
     gap: 10px;

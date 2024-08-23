@@ -1,5 +1,5 @@
 let firstCard, secondCard;
-let lockBoard = false;
+let lockCards = false;
 
 // Restart game function
 function restartGame() {
@@ -37,7 +37,7 @@ const timerInterval = setInterval(initializeTimer, 1000);
 // Card Game
 function displayCards() {
     const numOfCards = parseInt(getGameParameters('cardsNumberRequested'));
-    const gridContainer = document.getElementById('grid-container');
+    const cardsContainer = document.getElementById('cards-container');
 
     // Initialize cards array and Shuffle the array.
     let shuffledCardsArray = ((numOfCards) => {
@@ -49,7 +49,7 @@ function displayCards() {
     })(numOfCards);
 
     // Clear any existing cards
-    gridContainer.innerHTML = '';
+    cardsContainer.innerHTML = '';
 
     for (let cardId of shuffledCardsArray) {
         const card = document.createElement('div');
@@ -60,8 +60,9 @@ function displayCards() {
             <div class="front">
                 <img class="front-image" src=images/${cardId}.svg />
             </div>
-            <div class="back"></div>`;
-        gridContainer.appendChild(card);
+            <div class="back">
+            </div>`;
+        cardsContainer.appendChild(card);
         card.addEventListener("click", flipCard);
     }
 
@@ -71,24 +72,24 @@ function displayCards() {
 
 // Place cards on the board game function
 function setGameBoard(numOfCards) {
-    const gridContainer = document.getElementById('grid-container');
+    const cardsContainer = document.getElementById('cards-container');
 
     // Calculate the number of rows and columns
-    const containerWidth = gridContainer.clientWidth;
-    const containerHeight = gridContainer.clientHeight;
+    const containerWidth = cardsContainer.clientWidth;
+    const containerHeight = cardsContainer.clientHeight;
     const cardSize = Math.min(containerWidth, containerHeight) / Math.ceil(Math.sqrt(numOfCards));
 
     const aspectRatio = window.innerWidth / window.innerHeight;
 
     let columns = Math.ceil(Math.sqrt((numOfCards) * aspectRatio));
     let rows = Math.ceil((numOfCards) / columns);
-    gridContainer.style.gridTemplateColumns = `repeat(${columns}, minmax(${cardSize}px, 1fr))`;
-    gridContainer.style.gridTemplateRows = `repeat(${rows}, minmax(${cardSize}px, 1fr))`;
+    cardsContainer.style.gridTemplateColumns = `repeat(${columns}, minmax(${cardSize}px, 1fr))`;
+    cardsContainer.style.gridTemplateRows = `repeat(${rows}, minmax(${cardSize}px, 1fr))`;
 }
 
 // Flip the cards when the user pressed it 
 function flipCard() {
-    if (lockBoard) return;
+    if (lockCards) return;
     if (this === firstCard) return;
 
     this.classList.add("flipped");
@@ -99,7 +100,7 @@ function flipCard() {
     }
 
     secondCard = this;
-    lockBoard = true;
+    lockCards = true;
     checkCardsMatch();
 }
 
@@ -129,14 +130,13 @@ function checkCardsMatch() {
 function resetBoard() {
     firstCard = null;
     secondCard = null;
-    lockBoard = false;
+    lockCards = false;
 }
 
 // Check if all the cards are resolved to end the game
 function checkEndGame() {
     // Get the ammount resolved of result cards
     let resolvedCards = document.querySelectorAll('[data-resolved="yes"]').length;
-    console.log(resolvedCards);
     if (resolvedCards == parseInt(getGameParameters('cardsNumberRequested'))) {
         clearInterval(timerInterval);
         const playerScore = document.getElementById('timer').textContent;
@@ -152,9 +152,9 @@ const checkEndGameInterval = setInterval(checkEndGame, 500);
 function endGame(playerScore){
 
     clearInterval(checkEndGameInterval);
-    const gridContainer = document.getElementById('grid-container');
-    if (gridContainer){
-        gridContainer.remove();
+    const cardsContainer = document.getElementById('cards-container');
+    if (cardsContainer){
+        cardsContainer.remove();
     }
     const pTimer = document.getElementById("timer-holder");
     if(pTimer){
