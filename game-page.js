@@ -155,7 +155,7 @@ function endGame(playerScore){
     if (gridContainer){
         gridContainer.remove();
     }
-    const pTimer = document.querySelector('p');
+    const pTimer = document.getElementById("timer-holder");
     if(pTimer){
         pTimer.remove();
     }
@@ -163,6 +163,6 @@ function endGame(playerScore){
     congratulationsHeader.textContent = `Congratulations ${getGameParameters('playerName')}, you finished the game in ${playerScore} seconds!`;
     congratulationsHeader.style.padding = '20px';
 
-    const playAgainButton = document.querySelector('button');
+    const playAgainButton = document.getElementById('restart-game');
     playAgainButton.textContent = 'Play Again';
 }
