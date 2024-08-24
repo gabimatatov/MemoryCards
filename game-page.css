@@ -88,7 +88,6 @@ h2 {
     background-image: url(images/card-background.png);
     background-position: center center;
     background-size: cover;
-    backface-visibility: hidden;
 }
 
 .card .front {
