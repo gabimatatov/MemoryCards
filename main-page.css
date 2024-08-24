@@ -15,12 +15,6 @@ h1 {
     font-size: 50px;
 }
 
-p {
-    text-align: center;
-    font-size: 30px;
-    font-weight: bold;
-}
-
 .card-selection {
     padding: 10px;
     display: flex;
@@ -37,7 +31,6 @@ input[type="number"], input[type="text"] {
     border-radius: 8px;
     border: 2px solid #ccc;
     background-color: #e0e0e0;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     outline: none;
     width: 400px;
     margin-bottom: 10px;
@@ -48,7 +41,7 @@ input[type="number"]:focus, input[type="text"]:focus {
     background-color: #ffffff;
 }
 
-.cards-select-button, .restart-game{
+.cards-select-button{
     padding: 10px 15px;
     font-size: 20px;
     border-radius: 8px;
@@ -56,7 +49,6 @@ input[type="number"]:focus, input[type="text"]:focus {
     background-color: #007bff;
     color: #ffffff;
     cursor: pointer;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     transition: background-color 0.3s ease;
 }
 

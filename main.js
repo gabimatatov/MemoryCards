@@ -1,3 +1,4 @@
+// Check user inputs before starting the game
 function checkInputs(){
     let cardsNumberRequested = parseInt(document.getElementById("cards-number").value);
     let playerName = document.getElementById("player-name").value;
