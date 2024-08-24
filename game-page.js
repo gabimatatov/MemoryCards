@@ -89,8 +89,8 @@ function setGameBoard(numOfCards) {
 
 // Flip the cards when the user pressed it 
 function flipCard() {
-    if (lockCards) return;
-    if (this === firstCard) return;
+    if (lockCards || this === firstCard) 
+        return;
 
     this.classList.add("flipped");
 
@@ -114,8 +114,8 @@ function checkCardsMatch() {
 
         firstCard.dataset.resolved = 'yes';
         secondCard.dataset.resolved = 'yes';
-
         resetBoard();
+        
     } else {
         setTimeout(() => {
             firstCard.classList.remove("flipped");
