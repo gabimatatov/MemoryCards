@@ -92,6 +92,7 @@ h2 {
     background-image: url(images/card-background.png);
     background-position: center center;
     background-size: cover;
+    border: 1px solid black;
 }
 
 .card .front {
