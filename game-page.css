@@ -65,7 +65,11 @@ h2 {
 }
 
 .card {
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
+    background-image: url(images/image-background.png);
+    background-size: cover; 
+    background-position: center center; 
+    background-repeat: no-repeat; 
     border-radius: 10px;
     cursor: pointer;
     position: relative;
@@ -76,8 +80,9 @@ h2 {
 }
 
 .front-image {
-    width: 95%;
-    height: 95%;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
 }
 
 .card.flipped {

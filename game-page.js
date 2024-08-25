@@ -58,7 +58,7 @@ function displayCards() {
         card.setAttribute("data-resolved", "no");
         card.innerHTML = `
             <div class="front">
-                <img class="front-image" src=images/${cardId}.svg />
+                <img class="front-image" src=images/${cardId}.png />
             </div>
             <div class="back">
             </div>`;
