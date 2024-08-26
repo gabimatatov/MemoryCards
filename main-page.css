@@ -4,8 +4,11 @@ body {
     justify-content: center; 
     min-height: 100vh;
     min-width: 100vw;
-    background-color: #12181f;
-    color: white;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(images/page-background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    color: rgb(237, 187, 0);
     overflow: hidden;
 }
 
