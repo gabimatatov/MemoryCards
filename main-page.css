@@ -8,6 +8,7 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    font-family: Marker Felt, fantasy;
     color: rgb(237, 187, 0);
     overflow: hidden;
 }
